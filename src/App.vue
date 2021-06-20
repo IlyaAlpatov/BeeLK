@@ -1,32 +1,43 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <header-component></header-component>
+    <menu-component></menu-component>
+    <main>
+      <keep-alive>
+        <router-view/>
+      </keep-alive>
+    </main>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import headerComponent from './components/headerComponent.vue'
+import menuComponent from './components/menuComponent.vue'
+
+export default {
+  name: 'App',
+  components: {
+    headerComponent,
+    menuComponent
+  },
 }
+</script>
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<style scoped>
+  #app {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 200px auto;
+    grid-template-rows: 108px auto;
+    gap: 20px;
   }
-}
+
+  aside {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+
+  main {
+    justify-self: center;
+  }
 </style>

@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+body { 
+    background-color: #EDEDED;
+    min-height: 100vh;
+}
+
+/* Основной блок */
+
+.block-elem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.06);
+    border-radius: 24px;
+    padding: 30px;
+    min-height: 150px;
+}
+
+.help {
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.title:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+/* Переопределение сайдбара */
+
+.menu-list a {
+    border-radius: 10px;
+    color: #717579;
+}
+
+.menu-list a.is-active {
+    background-color: #FFD482;
+    opacity: 0.85;
+    color: #F66F4D;
+}
+
+.menu-list a:hover {
+    opacity: 0.75;
+    color: #F66F4D;
+}

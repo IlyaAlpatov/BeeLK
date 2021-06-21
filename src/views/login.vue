@@ -41,7 +41,11 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
+@import '../assets/scss/_variables.scss';
+@import '../assets/scss/_mixins.scss';
+
 @import url(https://fonts.googleapis.com/css?family=Gochi+Hand);
 .body {
   line-height: 1;
@@ -54,7 +58,6 @@ export default {
 .name-tag {
   position: relative;
   margin: 0 auto;
-
   height: 240px;
   width: 350px;
   background: #fff;

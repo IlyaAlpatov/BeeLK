@@ -1,7 +1,7 @@
 <template>
     <div class="authorization">
         <div class="authorization__wrapper">
-            <div class="authorization__block block-elem">
+            <div class="authorization__block">
                 <h1 class="title is-3 authorization__text">Авторизация BeeLK</h1>
                 <form action="">
                 <b-field class="authorization__text" label="Почта">
@@ -49,7 +49,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
+@import '../assets/scss/_variables.scss';
+@import '../assets/scss/_mixins.scss';
+
     .authorization__wrapper {
         display: flex;
         justify-content: center;
@@ -58,16 +62,12 @@ export default {
     }
 
     .authorization__block {
+        @include blockStyle;
         flex-direction: column;
         max-width: 287px;
     }
 
     .authorization__text {
-        font-family: Poppins, sans-serif;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 22px;
-        line-height: 34px;
-        color: #7957d5;
+        @include textStyle(500, 22px, 34px, $colorAuth);
     }
 </style>

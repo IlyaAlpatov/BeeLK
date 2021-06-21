@@ -1,11 +1,30 @@
 <template>
-    <section class="rating block-elem">
-        <div class="rating__wrapper ">
-            <b-field grouped group-multiline>
-                <!-- <div class="control">
-                <b-switch v-model="showDetailIcon">Show detail icon</b-switch>
-                </div> -->
-            </b-field>
+    <section class="rating">
+        <div class="rating__wrapper">
+            <div class="rating__filters">
+                <h3 class="rating__title">Рейтинг ЦПК за неделю</h3>
+                <b-field label="Вид рейтинга">
+                    <b-select placeholder="Рейтинг ЦПК">
+                        <option value="1">Рейтинг ЦПК</option>
+                        <option value="2">Рейтинг Отдела</option>
+                        <option value="1">Рейтинг Группы</option>
+                    </b-select>
+                </b-field>
+                <b-field label="Период">
+                    <b-select placeholder="Рейтинг за неделю">
+                        <option value="1">Рейтинг за неделю</option>
+                        <option value="2">Рейтинг за месяц</option>
+                        <option value="1">Рейтинг за квартал</option>
+                    </b-select>
+                </b-field>
+                <b-field class="rating__search">
+                    <b-input placeholder="Поиск сотрудника"
+                        type="search"
+                        icon="magnify"
+                        icon-clickable>
+                    </b-input>
+                </b-field>
+            </div>
             <b-table class="rating__table"
             :data="data"
             paginated
@@ -70,26 +89,30 @@ export default {
 <style lang="scss" scoped>
 
 @import '../assets/scss/_variables.scss';
-@import '../assets/scss/mixins.scss';
+@import '../assets/scss/_mixins.scss';
 
     .rating {
+        @include blockStyle;
         margin: 20px;
         justify-self: center;
         display: block;
-        max-width: 800px;
     }
 
-    .rating__wrapper {
+    .rating__title {
+        @include textStyle(600, 21px, 31px, $colorDark);
+        max-width: 150px;
+    }
+
+    .rating__filters {
         display: flex;
         gap: 20px;
-        align-items: center;
+        align-items: flex-end;
     }
 
     /* Стили для стрелок при разном рейтинге */
 
     .ratingUp {
-        // color: #99ff99;
-        color: $body-color;
+        color: #99ff99;
     }
 
     .ratingDown {

@@ -23,13 +23,17 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
+@import 'assets/scss/_variables.scss';
+@import 'assets/scss/_mixins.scss';
+
   #app {
     text-align: center;
     display: grid;
-    grid-template-columns: 200px auto;
-    grid-template-rows: 108px auto;
-    gap: 20px;
+    grid-template-columns: 1fr 20fr;
+    grid-template-rows: 88px auto;
+    gap: 10px;
   }
 
   aside {
@@ -37,7 +41,7 @@ export default {
     grid-row: 1 / 3;
   }
 
-  main {
-    justify-self: center;
-  }
+  // main {
+  //   justify-self: center;
+  // }
 </style>

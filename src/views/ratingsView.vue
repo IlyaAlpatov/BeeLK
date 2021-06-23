@@ -1,8 +1,8 @@
 <template>
     <section class="rating">
         <div class="rating__wrapper">
-            <div class="rating__filters">
-                <h3 class="rating__title">Рейтинг ЦПК за неделю</h3>
+            <div class="table__filters">
+                <h3 class="table__title">Рейтинг ЦПК за неделю</h3>
                 <b-field label="Вид рейтинга">
                     <b-select placeholder="Рейтинг ЦПК">
                         <option value="1">Рейтинг ЦПК</option>
@@ -49,8 +49,14 @@
 
 <script>
 
+// import lkButton from '../components/elemsComponent/lkButton.vue';
+
 export default {
     name: 'Ratings',
+    components: {
+        // lkButton
+    },
+
     data() {
         return {
             data: [
@@ -96,17 +102,6 @@ export default {
         margin: 20px;
         justify-self: center;
         display: block;
-    }
-
-    .rating__title {
-        @include textStyle(600, 21px, 31px, $colorDark);
-        max-width: 150px;
-    }
-
-    .rating__filters {
-        display: flex;
-        gap: 20px;
-        align-items: flex-end;
     }
 
     /* Стили для стрелок при разном рейтинге */

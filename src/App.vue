@@ -1,25 +1,40 @@
 <template>
   <div id="app">
-    <header-component></header-component>
-    <menu-component></menu-component>
-    <main>
-      <keep-alive>
-        <router-view/>
-      </keep-alive>
-    </main>
+    <div v-if="choice">
+      <authorization/>
+    </div>
+    <div class="main-container" v-else>
+      <header-component></header-component>
+      <menu-component></menu-component>
+      <main>
+        <keep-alive>
+          <router-view/>
+        </keep-alive>
+      </main>
+    </div>
+
   </div>
 </template>
 
 <script>
 import headerComponent from './components/headerComponent.vue'
 import menuComponent from './components/menuComponent.vue'
+import Authorization from "./views/authorizationView.vue"
+
 
 export default {
   name: 'App',
   components: {
     headerComponent,
-    menuComponent
+    menuComponent,
+    Authorization
   },
+  data() {
+    return {
+      // Переменная, которая заменяет проверку на авторизованного пользователя
+      choice: false,
+    }
+  }
 }
 </script>
 
@@ -30,6 +45,9 @@ export default {
 
   #app {
     text-align: center;
+  }
+
+  .main-container {
     display: grid;
     grid-template-columns: 1fr 20fr;
     grid-template-rows: 88px auto;

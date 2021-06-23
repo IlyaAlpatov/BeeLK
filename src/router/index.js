@@ -4,7 +4,6 @@ import Home from "../views/Home.vue";
 import Profile from "../views/profileView.vue";
 import Login from "../views/login.vue";
 import Ratings from "../views/ratingsView.vue";
-// import Authorization from "../views/authorizationView.vue";
 
 
 Vue.use(VueRouter);

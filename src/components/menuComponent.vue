@@ -10,7 +10,7 @@
                 open
             >
                 <div>
-                    <h2 class="title is-2"><span class="sidebar__logo-bee">Bee</span>LK</h2>
+                    <h2 class="title is-2"><span class="logo-bee">Bee</span>LK</h2>
                     <b-menu class="is-custom-mobile">
                         <b-menu-list class="sidebar__list" label="Меню">
                             <b-menu-item icon="account" class="menu-elem" label="Профиль"></b-menu-item>
@@ -55,9 +55,5 @@ export default {
     
     .sidebar__menu {
         margin-top: 32px;
-    }
-
-    .sidebar__logo-bee {
-        color: $backColorMenu;
     }
 </style>

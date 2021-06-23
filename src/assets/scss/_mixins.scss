@@ -14,7 +14,7 @@
 // Миксин основного блока
 @mixin blockStyle {
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
     background-color: $colorLight;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.06);

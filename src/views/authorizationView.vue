@@ -2,21 +2,20 @@
     <div class="authorization">
         <div class="authorization__wrapper">
             <div class="authorization__block">
-                <h1 class="title is-3 authorization__text">Авторизация BeeLK</h1>
-                <form action="">
-                <b-field class="authorization__text" label="Почта">
-                    <b-input type="email"
-                    value="beeline.ru">
-                    </b-input>
-                </b-field>
+                <h1 class="title is-3 authorization__text">Авторизация <span class="logo-bee">Bee</span>LK</h1>
+                <form class="authorization__form" action="">
+                <lk-input class="authorization__text"
+                :label="'Почта'"
+                :value="'beeline.ru'"
+                :type="'email'"></lk-input>
                 <b-field class="authorization__text" label="Пароль">
                     <b-input type="password"
                     value=""
                     password-reveal>
                     </b-input>
                 </b-field>
-                <b-button class="authorization__text" type="is-primary is-light"
-                @click="success">Вход</b-button>
+                <lk-button class="authorization__text" :text="'Вход'"
+                @click="success"></lk-button>
                 </form>
             </div>
         </div>
@@ -24,9 +23,15 @@
 </template>
 
 <script>
-export default {
-    methods: {
+import lkButton from '../components/elemsComponent/lkButton.vue';
+import lkInput from '../components/elemsComponent/lkInput.vue';
 
+export default {
+    components: {
+        lkButton,
+        lkInput
+    },
+    methods: {
         // Тосты
         danger() {
         this.$buefy.toast.open({
@@ -67,7 +72,13 @@ export default {
         max-width: 287px;
     }
 
+    .authorization__form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
     .authorization__text {
-        @include textStyle(500, 22px, 34px, $colorAuth);
+        @include textStyle(500, 22px, 34px, $colorDark);
     }
 </style>
